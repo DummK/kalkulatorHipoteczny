@@ -10,13 +10,38 @@ public class Main {
         double annualInterestRate;
         int years;
 
+        while (true) {
             System.out.print("Wprowadź kwote kredytu: ");
+                principal = scanner.nextDouble();
+                if (principal >= 1000 && principal <= 1000000) {
+                    break;
+                }
+                else {
+                    System.out.println("Błędna kwota kredytu, Wprowadź wartość między 1000 a 1 000 000");
+                }
+        }
 
-
-
+        while (true) {
             System.out.print("Wprowadź roczne oprocentowanie: ");
+            annualInterestRate = scanner.nextDouble();
+            if (annualInterestRate >= 1 && annualInterestRate <= 30) {
+                break;
+            }
+            else {
+                System.out.println("Błędna roczna stopa oprocentowania, Wprowadź wartość między 1 a 30");
+            }
+        }
 
+        while (true) {
             System.out.print("Wprowadź okres spłaty w latach: ");
+            years = scanner.nextInt();
+            if (years >= 1 && years <= 30) {
+                break;
+            }
+            else {
+                System.out.println("Błędny okres spłaty kredytu, Wprowadź wartość między 1 a 30");
+            }
+        }
 
             double r = annualInterestRate / 100 / 12;
             int n = years * 12;
